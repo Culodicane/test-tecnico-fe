@@ -17,7 +17,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { MatCardModule } from '@angular/material/card';
 import { LibraryComponent } from './library/library.component';
-import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -35,7 +34,6 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     LoginComponent,
     LibraryComponent,
-    BookListComponent,
     BookDetailsComponent,
     AddLibraryDialogComponent,
    ],

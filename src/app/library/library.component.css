@@ -27,9 +27,26 @@ table {
 }
 
 
-
-
 .mat-menu-item:hover .mat-icon{
   color: purple;
 }
 
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+/* Checked state */
+.custom-button-toggle.mat-button-toggle-checked {
+  background-color: #e73124ad; /* Change to your desired background color */
+  color: #fff; /* Change to your desired text color */
+}
+
+.center-cell {
+  width: 80px;
+  display: flex;
+  flex-direction: inherit;
+}
+
+.mat-form-field-outline-start, .mat-form-field-outline-end {
+  border-radius: 0 !important;
+}
