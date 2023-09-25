@@ -1,0 +1,13 @@
+<div  *ngIf="bookData" class="book-container">
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title >{{title}}</mat-card-title>
+    <mat-card-subtitle>{{author}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://covers.openlibrary.org/b/isbn/{{isbn}}-L.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content class="plot">
+    <p>TRAMA: {{plot}} </p>
+  </mat-card-content>
+  <mat-card-subtitle class="isbn">isbn: {{isbn}}</mat-card-subtitle>
+</mat-card>
+</div>

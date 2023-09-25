@@ -1,0 +1,27 @@
+
+<form class="my-form" [formGroup]="bookForm" (ngSubmit)="onSubmit()" >
+
+  <mat-form-field appearance="fill">
+    <mat-label>titolo</mat-label>
+    <input matInput formControlName="title">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>isbn</mat-label>
+    <input matInput formControlName="isbn">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>autore</mat-label>
+    <input matInput formControlName="author">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>trama</mat-label>
+    <input matInput formControlName="plot">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>letture</mat-label>
+    <input matInput formControlName="timesRead">
+  </mat-form-field>
+
+  <button mat-button [disabled]="!bookForm.valid" >Submit</button>
+
+</form>
