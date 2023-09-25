@@ -27,15 +27,9 @@ table {
 }
 
 
-.mat-button-toggle-group {
-  height: 36px;
-  align-items: center;
-  display: flex;
-  justify-content: right;
-  align-items :end;
-  position: relative;
-}
+
 
 .mat-menu-item:hover .mat-icon{
   color: purple;
 }
+

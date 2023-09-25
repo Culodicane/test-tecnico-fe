@@ -24,3 +24,16 @@
 .mat-drawer {
   min-width: 200px;
 }
+
+/* Add a CSS class to control alignment */
+.flex-grow {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.user-name {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align content to the right */
+}

@@ -3,12 +3,15 @@
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()" >
     <mat-icon>menu</mat-icon>
   </button>
-  <span>My Library</span>
-  <div class="user-name">
-    <span *ngIf="user" >{{user}}</span>
-  </div>
-
+  <span class="flex-grow">My Library</span>
   <span class="example-spacer"></span>
+  <div>
+    <span *ngIf="name">{{name}} {{lastname}}</span>
+  </div>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="logout()">
+    <mat-icon>logout</mat-icon>
+  </button>
+
 </mat-toolbar>
 
 <mat-drawer-container class="example-container" [hasBackdrop]="true">
@@ -18,8 +21,6 @@
   <mat-drawer #drawer [mode]="'side'">
     <mat-list>
       <mat-list-item class="sidenav-item" style="cursor: pointer" routerLink="/library">Library</mat-list-item>
-      <mat-list-item *ngIf="type == 'admin'" class="sidenav-item" style="cursor: pointer" routerLink="/catalog">Book catalog</mat-list-item>
-
    </mat-list>
   </mat-drawer>
 

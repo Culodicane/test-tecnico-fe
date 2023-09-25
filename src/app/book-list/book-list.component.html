@@ -9,7 +9,7 @@
   <mat-label>Filter</mat-label>
   <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
 </mat-form-field>
-<button mat-stroked-button (click)="addBook()">Add data</button>
+<button mat-stroked-button (click)="addBook()">Aggiungi libri</button>
 <table *ngIf="dataSource" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <!-- Name Column -->

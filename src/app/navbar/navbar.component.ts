@@ -9,6 +9,8 @@ import {MatListModule} from '@angular/material/list';
 import { CookieService } from 'ngx-cookie-service';
 import { LoginService } from '../services/login.service';
 import { Observable, forkJoin, mergeMap } from 'rxjs';
+import { MatCardModule } from '@angular/material/card';
+
 
 @Component({
     selector: 'app-navbar',
@@ -22,11 +24,18 @@ import { Observable, forkJoin, mergeMap } from 'rxjs';
         MatSidenavModule,
         NgIf,
         RouterModule,
-        MatListModule
+        MatListModule,
+        MatCardModule
     ],
 
 })
 export class NavbarComponent {
+
+  logout() {
+    console.log("lele")
+    this.cookie.delete("Bearer","/");
+    window.location.reload();
+  }
 
   constructor(private loginService : LoginService, private cookie:CookieService,private router:Router){
 
@@ -34,7 +43,8 @@ export class NavbarComponent {
       if(event instanceof NavigationStart){
         this.loginService.getUserDetails().subscribe({
           next : (userEntity) => {
-            this.user = JSON.parse(userEntity).name;
+            this.name = JSON.parse(userEntity).name;
+            this.lastname = JSON.parse(userEntity).lastName;
             this.type = JSON.parse(userEntity).type;
           },
           error : (error) => {console.log(error)}
@@ -50,7 +60,8 @@ export class NavbarComponent {
 
   }
 
-  user = '';
+  name = '';
+  lastname = '';
   type = '';
 
   showFiller = false;
