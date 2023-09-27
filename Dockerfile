@@ -1,5 +1,5 @@
-# Use an official Node.js runtime as the base image for building
-FROM node:18 AS build
+# Use an official Node.js runtime as the base image
+FROM node:16
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
@@ -16,17 +16,10 @@ RUN npm install
 # Copy the entire Angular app to the working directory
 COPY . .
 
-# Build the Angular app for production
-RUN ng build --configuration=production
-
-# Use an official Nginx runtime as the final base image
-FROM nginx:latest
-
-# Copy the built Angular app from the build stage to the Nginx web server's default location
-COPY --from=build /usr/src/app/dist/* /usr/share/nginx/html/
-
-# Expose port 80 for serving the Angular app
+# Build the Angular app
+RUN npm run ng build -- --configuration="production"
+# Expose the port the app will run on
 EXPOSE 80
 
-# Start Nginx when the container starts
-CMD ["nginx", "-g", "daemon off;"]
+# Start the Angular app
+CMD ["ng", "serve", "--host", "0.0.0.0", "--port", "80"]
