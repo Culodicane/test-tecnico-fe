@@ -46,6 +46,10 @@ export class AddLibraryDialogComponent {
   }
 
   ngOnInit(): void {
+
   }
 
+  closeDialog() {
+    this.dialogRef.close([]);
+  }
 }

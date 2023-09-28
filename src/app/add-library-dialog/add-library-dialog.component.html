@@ -22,6 +22,6 @@
     <input matInput formControlName="timesRead">
   </mat-form-field>
 
-  <button mat-button [disabled]="!bookForm.valid" >Submit</button>
+  <button mat-button [disabled]="!bookForm.valid" (click)="closeDialog()">Submit</button>
 
 </form>

@@ -20,3 +20,16 @@
 .plot{
   padding: 5px;
 }
+
+.book-image {
+  background-color: #f0f0f0; /* Set your desired background color */
+  width: 100%;
+  min-height: 300px; /* Adjust the height as needed */
+  object-fit: cover;
+}
+
+.book-image.loading {
+  background-image: url('../../assets/images/spinner.gif'); /* Replace with your loading spinner image */
+  background-size: cover;
+}
+

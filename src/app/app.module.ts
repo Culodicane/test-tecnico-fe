@@ -25,7 +25,7 @@ import { AddLibraryDialogComponent } from './add-library-dialog/add-library-dial
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -56,7 +56,8 @@ import { FormsModule } from '@angular/forms';
     MatPaginatorModule,
     MatButtonToggleModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule
   ],
   exports:[
     MatSidenavModule,
@@ -75,7 +76,8 @@ import { FormsModule } from '@angular/forms';
     MatPaginatorModule,
     MatButtonToggleModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule
 
   ],
   providers: [],

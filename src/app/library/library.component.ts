@@ -85,6 +85,8 @@ export class LibraryComponent {
           data : JSON.parse(result).idUser
         });
         dialogRef.afterClosed().subscribe(result => {
+          console.log(result);
+          window.location.reload();
         });
       }
     })
@@ -104,4 +106,5 @@ export class LibraryComponent {
     this.dataSource.paginator = this.paginator;
   }
 
+  protected readonly closed = closed;
 }

@@ -21,6 +21,7 @@ export class BookDetailsComponent {
   constructor(private loginService:LoginService, public dialogRef: MatDialogRef<BookDetailsComponent>, @Inject(MAT_DIALOG_DATA) public bookData: any, private bookService : BookService){
   }
 
+  isLoading = true;
   ngOnInit(): void {
 
     console.log(this.bookData)
@@ -31,6 +32,11 @@ export class BookDetailsComponent {
     this.author = this.bookData.author;
     this.isbn = this.bookData.isbn
     console.log(this.bookData)
+  }
+
+  onImageLoad() {
+    // Called when the image has finished loading
+    this.isLoading = false; // Set isLoading to false
   }
 
 }
