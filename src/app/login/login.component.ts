@@ -1,8 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
 import { LoginService } from '../services/login.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import {MatDialog} from "@angular/material/dialog";
+import {BookDetailsComponent} from "../book-details/book-details.component";
+import {LoginDialogComponent} from "../login-dialog/login-dialog.component";
 
 
 @Component({
@@ -12,13 +15,14 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  constructor(private loginService : LoginService, private cookie:CookieService,private router:Router){
+  constructor(private loginService : LoginService, private cookie:CookieService,private router:Router,
+              private dialog: MatDialog ){
 
   }
 
   form: FormGroup = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl(''),
+    email: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
   });
 
   submit() {
@@ -29,7 +33,15 @@ export class LoginComponent {
           this.router.navigate(["library"]) .then(() => {
           });
         },
-        error : error => {console.log(error.error)}
+
+        error : error => {
+          const dialogRef = this.dialog.open(LoginDialogComponent, {
+            data: error.error
+          });
+          dialogRef.afterClosed().subscribe(result => {
+          });
+          //console.log(error.error);
+        }
       })
     }
   }
@@ -38,3 +50,5 @@ export class LoginComponent {
 
   @Output() submitEM = new EventEmitter();
 }
+
+

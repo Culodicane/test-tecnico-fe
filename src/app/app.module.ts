@@ -26,6 +26,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 
 
 
@@ -36,6 +37,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     LibraryComponent,
     BookDetailsComponent,
     AddLibraryDialogComponent,
+    LoginDialogComponent,
    ],
   imports: [
     BrowserModule,
