@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as the base image
-FROM node:16
+FROM node:18
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
@@ -8,8 +8,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install Angular CLI globally
-RUN npm install -g @angular/cli
-
+RUN npm install -g @angular/cli@16
 # Install project dependencies
 RUN npm install
 
@@ -18,8 +17,9 @@ COPY . .
 
 # Build the Angular app
 RUN npm run ng build -- --configuration="production"
+
 # Expose the port the app will run on
 EXPOSE 80
 
 # Start the Angular app
-CMD ["ng", "serve", "--host", "0.0.0.0", "--port", "80"]
+CMD ng serve --configuration=production --host 0.0.0.0 --port 80

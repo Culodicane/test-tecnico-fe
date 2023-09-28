@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import {MatDialog} from "@angular/material/dialog";
 import {BookDetailsComponent} from "../book-details/book-details.component";
 import {LoginDialogComponent} from "../login-dialog/login-dialog.component";
+import {environment} from "../environment";
 
 
 @Component({
@@ -17,7 +18,7 @@ export class LoginComponent {
 
   constructor(private loginService : LoginService, private cookie:CookieService,private router:Router,
               private dialog: MatDialog ){
-
+    console.log("env:" + environment.production);
   }
 
   form: FormGroup = new FormGroup({
