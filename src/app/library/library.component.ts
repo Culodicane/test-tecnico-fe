@@ -55,9 +55,7 @@ export class LibraryComponent {
 
   constructor(private loginService:LoginService, private libraryService:LibraryService,private dialog:MatDialog, private bookService : BookService){
     this.loginService.checkToken();
-    this.libraryService.getLibrary().subscribe(result => {
-      this.dataSource.data = result;
-    })
+
   }
 
   displayedColumns: string[] = ['title', 'timesRead', 'dateAdded','dateDeleted', 'action'];
@@ -66,7 +64,9 @@ export class LibraryComponent {
   idUser : any;
 
   ngOnInit(): void {
-
+    this.libraryService.getLibrary().subscribe(result => {
+      this.dataSource.data = result;
+    })
   }
 
   getBookDetail(row: any) {
