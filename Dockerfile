@@ -22,4 +22,4 @@ RUN npm run ng build -- --configuration="production"
 EXPOSE 80
 
 # Start the Angular app
-CMD ng serve --configuration=production --host 0.0.0.0 --port 80
+CMD ng serve --configuration=production --host 0.0.0.0 --port 4200
