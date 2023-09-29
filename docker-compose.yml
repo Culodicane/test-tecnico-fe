@@ -5,10 +5,11 @@ services:
       context: .
       dockerfile: Dockerfile
     networks:
-      - my-network
+      docker_mynetwork:
+          ipv4_address: 172.20.0.4
     ports:
       - '4200:4200'
 
 networks:
-  my-network:
+  docker_mynetwork:
     external: true
