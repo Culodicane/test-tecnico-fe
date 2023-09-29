@@ -58,15 +58,14 @@ export class LibraryComponent {
 
   }
 
-  displayedColumns: string[] = ['title', 'timesRead', 'dateAdded','dateDeleted', 'action'];
-  dataSource = new MatTableDataSource();
-  data : any;
+  displayedColumns: string[] = ['title', 'timesRead', 'dateAdded', 'action'];
+  dataSource = new MatTableDataSource<any>();
   idUser : any;
 
   ngOnInit(): void {
     this.libraryService.getLibrary().subscribe(result => {
       this.dataSource.data = result;
-    })
+    });
   }
 
   getBookDetail(row: any) {
@@ -107,4 +106,18 @@ export class LibraryComponent {
   }
 
   protected readonly closed = closed;
+
+  addColumn(checked: boolean) {
+    if (checked) {
+      let index= this.displayedColumns.length - 1;
+      this.displayedColumns.splice(index, 0, 'dateDeleted');
+      console.log(this.displayedColumns);
+    }
+    if (!checked){
+      this.displayedColumns = this.displayedColumns.filter(columnName => columnName !== 'dateDeleted');
+      console.log(this.displayedColumns);
+
+    }
+  }
+
 }

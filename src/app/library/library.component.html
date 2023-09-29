@@ -13,7 +13,10 @@
 <mat-toolbar>
   <button mat-stroked-button (click)="addBook()">Aggiungi Libro</button>
   <span class="example-spacer"></span>
-  <mat-button-toggle #deletedButton class="mat-elevation-z0" appearance="legacy" value="bold" [ngClass]="{ 'custom-button-toggle': deletedButton.checked, 'mat-button-toggle-checked': deletedButton.checked }">
+  <mat-button-toggle #deletedButton class="mat-elevation-z0" appearance="legacy" value="bold"
+                     [ngClass]="{ 'custom-button-toggle': deletedButton.checked, 'mat-button-toggle-checked': deletedButton.checked }"
+                     (click)="addColumn(deletedButton.checked)"
+  >
     cestino
 </mat-button-toggle>
 </mat-toolbar>
